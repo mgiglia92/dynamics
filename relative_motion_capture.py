@@ -1,6 +1,6 @@
 from CooperVicon import CooperVicon
 from data_util import RelativeMotionData
-from VideoStream import VideoStream
+from VideoStream import VideoStream, VideoStreamCalibrated
 import matplotlib.pyplot as plt
 import time
 import numpy as np
@@ -42,21 +42,21 @@ if __name__ == "__main__":
         dt = t2-t1
         
         # Pause desired amount of time
-        if((t2-t1 < frame_duration)):
-            time.sleep(frame_duration - (t2-t1))
-            print(time.time() - t1)
+        while(time.time() - t1) <= frame_duration:
+            pass
+        print(time.time()-t1)
 
         i += 1
 
     print("Done recording, saving data.")
     # Save video
     writer = cv2.VideoWriter(filename='relative_motion.mp4', apiPreference=cv2.CAP_FFMPEG, fourcc=cv2.VideoWriter_fourcc(*'mp4v'), \
-                    fps=(1/frame_duration), frameSize=(640,480), params=None)
+                    fps=1/frame_duration, frameSize=(640,480), params=None)
     for i in range(0, len(data.frames)):
         writer.write(data.frames[i])
     writer.release()
     print("Video saved as relative_motion.mp4")
-
+    print("Video has " + str(len(data.frames)) + " frames")
     # Save translation/quaternion data
     fields = ['time', 'cam_x', 'cam_y', 'cam_z', 'obj_x', 'obj_y', 'obj_z', \
                 'cam_i', 'cam_j', 'cam_k', 'cam_w', 'obj_i', 'obj_j', 'obj_k', 'obj_w']
