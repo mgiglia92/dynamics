@@ -1,6 +1,12 @@
-from CooperVicon import CooperVicon
-from data_util import RelativeMotionData
-from VideoStream import VideoStream
+#Handle python relative import garbage (__name__ = __main__) when run file passed to interpreter
+import os
+import sys
+this_path = os.path.abspath('..') # Get abs path to directory above this file
+sys.path.append(this_path) # Append src directory to path so python can find realtive imports
+
+from util.CooperVicon import CooperVicon
+from util.data_util import RelativeMotionData
+from util.VideoStream import VideoStream
 import matplotlib.pyplot as plt
 import time
 import numpy as np

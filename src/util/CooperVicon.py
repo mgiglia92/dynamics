@@ -1,5 +1,5 @@
 from vicon_dssdk.ViconDataStream import Client, DataStreamException
-from controls_util import State
+from util.controls_util import State
 
 class CooperVicon(Client):
     def __init__(self, ip='199.98.17.181'):
