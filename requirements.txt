@@ -1,0 +1,5 @@
+python-csv
+opencv-python
+numpy
+scipy
+matplotlib

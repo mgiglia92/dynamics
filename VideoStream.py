@@ -70,6 +70,6 @@ class CalibrationParameters:
         self.tvecs = tvecs
 
 if __name__ == "__main__":
-    stream = VideoStreamCalibrated(1)
+    stream = VideoStreamCalibrated(0)
     stream.start()
     while(1): pass
