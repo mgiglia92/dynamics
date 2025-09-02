@@ -37,7 +37,7 @@ class VideoStreamCalibrated(Thread):
         self.width = self.cap.get(3)
         self.height = self.cap.get(4)
         self.fps = self.cap.get(5)
-        self.distortion_params = pickle.load(open("calib_params.txt", "rb"))
+        self.distortion_params = pickle.load(open("src/util/calib_params.txt", "rb"))
 
     def stream(self):
         while(1):
@@ -70,6 +70,6 @@ class CalibrationParameters:
         self.tvecs = tvecs
 
 if __name__ == "__main__":
-    stream = VideoStreamCalibrated(1)
+    stream = VideoStreamCalibrated(0)
     stream.start()
     while(1): pass

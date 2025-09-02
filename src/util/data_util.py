@@ -11,4 +11,4 @@ class RelativeMotionData:
         self.object_state.append(obj_state)
         self.frames.append(frame)
         self.time.append(time)
-    
+
