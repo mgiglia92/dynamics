@@ -85,7 +85,7 @@ if __name__ == "__main__":
     print("Video saved as relative_motion.mp4")
     print("Video has " + str(len(data.frames)) + " frames")
     # Save translation/quaternion data
-    fields = ['time', 'cam_x', 'cam_y', 'cam_z', 'obj_x', 'obj_y', 'obj_z', \
+    fields = ['sample_period', 'cam_x', 'cam_y', 'cam_z', 'obj_x', 'obj_y', 'obj_z', \
                 'cam_i', 'cam_j', 'cam_k', 'cam_w', 'obj_i', 'obj_j', 'obj_k', 'obj_w']
 
     filename = f"data/{groupname}/cam_obj_data.csv"
