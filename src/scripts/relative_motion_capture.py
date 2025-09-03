@@ -26,7 +26,7 @@ if __name__ == "__main__":
     stream.start()
     time.sleep(2)
     dts=[]
-    frame_duration = 1/20 # 1/framerate
+    frame_duration = 1/30 # 1/framerate
     i=0
     
     # Get ready
